@@ -107,11 +107,11 @@ You should see:
 
 ### 4. Open the Frontend
 
-Simply open `frontend/index.html` in a browser (or serve it):
+Simply open `index.html` in a browser (or serve it):
 
 ```bash
 # Option A: Open directly
-open frontend/index.html
+open index.html
 
 # Option B: Serve with Python
 cd frontend && python3 -m http.server 3000
