@@ -27,21 +27,19 @@
 
 ```
 simplifiq/
-├── frontend/
-│   └── index.html          # Lead intake form (standalone HTML)
-├── backend/
-│   ├── server.js           # Express entry point
-│   ├── .env.example        # Environment variables template
-│   ├── routes/
-│   │   └── leads.js        # POST /api/leads — main pipeline
-│   ├── services/
-│   │   ├── grokService.js       # Grok AI: research + recs + email
-│   │   ├── enrichmentService.js # Web scraping + data enrichment
-│   │   ├── pdfService.js        # HTML → PDF report generator
-│   │   ├── emailService.js      # Nodemailer email delivery
-│   └── utils/
-│       └── logger.js        # Winston logger
-├── reports/                 # Generated PDFs (auto-created)
+├── index.html        
+├── server.js 
+│── .env.example      
+├── routes/
+│   └── leads.js        
+├── services/
+├── grokService.js     
+├── enrichmentService.js 
+├── pdfService.js        
+├── emailService.js     
+│── utils/
+│   └── logger.js      
+├── reports/                 
 └── README.md
 ```
 
@@ -59,7 +57,6 @@ simplifiq/
 ### 1. Install Dependencies
 
 ```bash
-cd backend
 npm install
 ```
 
@@ -68,7 +65,7 @@ npm install
 ### 2. Configure Environment Variables
 
 ```bash
-cp .env.example .env
+cp .env
 ```
 
 Edit `.env`:
@@ -78,12 +75,6 @@ Edit `.env`:
 GROK_API_KEY=xai-your-key-here
 SMTP_USER=you@gmail.com
 SMTP_PASS=your-gmail-app-password   # Not your login password!
-
-# Optional (bonus features)
-GOOGLE_CLIENT_EMAIL=sa@project.iam.gserviceaccount.com
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-GOOGLE_SHEET_ID=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms
-GOOGLE_DRIVE_FOLDER_ID=1a2b3c4d5e6f7g8h
 ```
 
 #### Getting Gmail App Password:
@@ -99,10 +90,9 @@ GOOGLE_DRIVE_FOLDER_ID=1a2b3c4d5e6f7g8h
 
 ---
 
-### 3. Start the Backend
+### 3. Start the server
 
 ```bash
-cd backend
 node server.js
 ```
 
@@ -239,6 +229,12 @@ Logs are written to:
 ### Generated Report / Email Delivery
 ![MAil](./screenshots/mail1.png)
 ![MAil](./screenshots/mail2.png)
+
+## 📄 Sample Generated Report
+
+A sample AI-generated business intelligence report is included in this repository.
+
+[View Sample Report](./sample-report/sample-report.pdf)
 
 ### With Docker:
 ```dockerfile
